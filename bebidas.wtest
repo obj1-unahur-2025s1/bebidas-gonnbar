@@ -1,0 +1,28 @@
+import bebidas.*
+
+describe 'test de tito'{
+  method initialize(){
+    tito.consumir(5,whisky)
+  }
+  method consumirTerere(){
+    tito.consumir(5,terere)
+  }
+
+  test 'tito tiene peso 70'{
+    assert.equals(70,tito.peso())
+  }
+  
+  test 'la velocidad de tito es 4.1'{
+    assert.equals(0.9 ** 5 * 490 / 70 ,tito.velocidad())
+  }
+
+  test 'ahora la velocidad es 7 porque tomo terere'{
+    self.consumirTerere()
+    assert.equals(7, tito.velocidad())
+  }
+
+  test 'si consume cianuro la velocidad es 0 porque muere'{
+    tito.consumir(5,cianuro)
+    assert.equals(0,tito.velocidad())
+  }
+}
